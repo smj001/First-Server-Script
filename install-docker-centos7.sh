@@ -11,6 +11,7 @@ systemctl enable docker
 echo "-----------installing docker-compose------------"
 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+mount /tmp -o remount,exec
 echo "------------ docker-compose version ------------"
 docker-compose --version
 echo "------------------------------------------------"
