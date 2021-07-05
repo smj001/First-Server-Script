@@ -2,7 +2,7 @@
 echo " ======================== update and install ZSH ======================== "
 apt-get update -y
 sudo touch /etc/apt/apt.conf.d/proxy.conf
-echo "Acquire::http::Proxy \"http://188.40.202.116:8585/\";" > /etc/apt/apt.conf.d/proxy.conf
+echo "Acquire::http::Proxy \"http://65.21.13.253:1433/\";" > /etc/apt/apt.conf.d/proxy.conf
 apt-get install zsh -y
 zsh --version
 usermod -s /usr/bin/zsh $(whoami)
@@ -15,9 +15,9 @@ apt-get install zsh-syntax-highlighting
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo " ========================== install OH-MY-ZSH == ======================== "
-wget -e use_proxy=yes -e https_proxy=188.40.202.116:8585 https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+wget -e use_proxy=yes -e https_proxy=65.21.13.253:1433 https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sh install.sh -y
-# install zsh-autosuggestions 
+# install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # install syntax highliter
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
